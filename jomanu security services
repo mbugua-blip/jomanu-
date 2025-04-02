@@ -1,0 +1,63 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+
+const Home = () => (
+  <section className="text-center p-10 bg-blue-900 text-white">
+    <h1 className="text-4xl font-bold">Jomanu Security Services</h1>
+    <p className="mt-2 text-lg">Swift. Strong. Secure.</p>
+    <button className="mt-4 bg-white text-blue-900 px-6 py-2 rounded-lg font-semibold">Get a Free Consultation</button>
+  </section>
+);
+
+const About = () => (
+  <section className="p-10">
+    <h2 className="text-3xl font-bold">About Us</h2>
+    <p className="mt-2">We are committed to providing top-tier security solutions with integrity and professionalism.</p>
+  </section>
+);
+
+const Services = () => (
+  <section className="p-10">
+    <h2 className="text-3xl font-bold">Our Services</h2>
+    <ul className="mt-2 list-disc pl-6">
+      <li>Corporate Security</li>
+      <li>Residential Security</li>
+      <li>Event Security</li>
+      <li>Surveillance & Monitoring</li>
+      <li>Armed & Unarmed Guards</li>
+    </ul>
+  </section>
+);
+
+const Contact = () => (
+  <section className="p-10">
+    <h2 className="text-3xl font-bold">Contact Us</h2>
+    <p className="mt-2">Phone: +123 456 7890</p>
+    <p>Email: contact@jomanu-security.com</p>
+  </section>
+);
+
+const Navbar = () => (
+  <nav className="bg-blue-900 text-white p-4 flex justify-around">
+    <Link to="/" className="hover:underline">Home</Link>
+    <Link to="/about" className="hover:underline">About</Link>
+    <Link to="/services" className="hover:underline">Services</Link>
+    <Link to="/contact" className="hover:underline">Contact</Link>
+  </nav>
+);
+
+const App = () => {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
